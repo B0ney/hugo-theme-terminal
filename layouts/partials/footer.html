@@ -13,9 +13,9 @@
 </footer>
 
 {{ $menu := resources.Get "js/menu.js" | js.Build }}
-{{ $copy_code_button := resources.Get "js/copy-code-button.js" | js.Build }}
-
-{{ $bundle := slice $menu $copy_code_button | resources.Concat "bundle.js" | resources.Minify }}
+<!-- {{ $copy_code_button := resources.Get "js/copy-code-button.js" | js.Build }} -->
+<!-- {{ $bundle := slice $menu $copy_code_button | resources.Concat "bundle.js" | resources.Minify }} -->
+{{ $bundle := slice $menu | resources.Concat "bundle.js" | resources.Minify }}
 
 <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
 
