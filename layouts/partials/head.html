@@ -34,6 +34,11 @@
   <link rel="stylesheet" href="{{ "style.css" | absURL }}">
 {{- end }}
 
+{{ if (fileExists "static/syntax.css") -}}
+  <link rel="stylesheet" href="{{ "syntax.css" | absURL }}">
+{{- end }}
+
+
 <!-- Icons -->
 {{ if isset $.Site.Params "favicon" }}
   <link rel="shortcut icon" href="{{ $.Site.Params.favicon | absURL }}">
